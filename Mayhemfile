@@ -1,0 +1,8 @@
+project: rnshah9/admesh
+target: admesh
+tests:
+  - file://examples/block.stl
+
+cmds:
+  - cmd: /repo/build/admesh @@
+    filepath: /test.stl
