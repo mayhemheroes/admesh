@@ -5,4 +5,3 @@ testsuite:
 
 cmds:
   - cmd: /install/bin/admesh @@
-image: ghcr.io/rnshah9/playground:admesh

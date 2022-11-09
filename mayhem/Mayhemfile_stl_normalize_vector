@@ -3,4 +3,3 @@ target: stl-normalize-vector
 
 cmds:
   - cmd: /fuzz_stl_normalize_vector
-image: ghcr.io/rnshah9/playground:admesh
