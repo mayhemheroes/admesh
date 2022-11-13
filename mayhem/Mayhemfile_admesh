@@ -1,0 +1,7 @@
+project: admesh
+target: admesh
+testsuite:
+  - file://examples/block.stl
+
+cmds:
+  - cmd: /install/bin/admesh @@
