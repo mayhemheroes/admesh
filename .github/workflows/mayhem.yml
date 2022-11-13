@@ -50,23 +50,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mayhemfile_admesh:
+        mayhemfile:
           - mayhem/Mayhemfile_admesh
-        mayhemfile_stl_normalize_vector:
           - mayhem/Mayhemfile_stl_normalize_vector
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Start analysis for ${{ matrix.mayhemfile_admesh }}
+      - name: Start analysis for ${{ matrix.mayhemfile }}
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile_admesh }} --duration 300
-          sarif-output: sarif
-      - name: Start analysis for ${{ matrix.mayhemfile_stl_normalize_vector }}
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile_stl_normalize_vector }} --duration 300
+          args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile }} --duration 300
           sarif-output: sarif
